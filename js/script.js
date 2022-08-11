@@ -34,7 +34,7 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
     //Timer
-    const deadline = '2022-08-20';
+    const deadline = '2022-08-19';
 
     function getTimeRemaining(endTime) {
         const t = Date.parse(endTime) - Date.parse(new Date),
@@ -58,12 +58,12 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
     function setClock(selector, endTime) {
-        const timer = document.querySelector('selector'),
-              days = document.querySelector('#days'),
-              hours = document.querySelector('#hours'),
-              minutes = document.querySelector('#minutes'),
-              seconds = document.querySelector('#seconds'),
-              timInterval = setInterval(upDateClock, 1000);
+        const timer = document.querySelector(selector),
+              days = timer.querySelector('#days'),
+              hours = timer.querySelector('#hours'),
+              minutes = timer.querySelector('#minutes'),
+              seconds = timer.querySelector('#seconds'),
+              timeInterval = setInterval(upDateClock, 1000);
         upDateClock();
 
         function upDateClock() {
@@ -76,7 +76,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
             if (t.total <= 0) {
-                clearInterval(timInterval);
+                clearInterval(timeInterval);
             }
         } 
     }
